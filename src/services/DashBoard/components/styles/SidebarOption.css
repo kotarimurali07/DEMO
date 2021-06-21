@@ -4,12 +4,13 @@
   font-size: 12px;
   padding: 7px 10px;
   cursor: pointer;
+
   transition: background-color 0.2s ease;
 }
 
 .sidebarOption:hover {
   opacity: 0.9;
-  background-color: var(--slack-color-hover);
+  background-color: #340e36;
 }
 
 .sidebarOption > h3 {

@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Header.css";
-import { Avatar, TextField } from "@material-ui/core";
+import { Avatar } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";

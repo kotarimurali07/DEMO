@@ -1,10 +1,9 @@
 import React from "react";
 import Presentation from "./Presentation";
-const Container = (props) => {
-  //   console.log(props);
+const Container = () => {
   return (
     <div>
-      <Presentation {...props} />
+      <Presentation />
     </div>
   );
 };
