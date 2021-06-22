@@ -1,17 +1,16 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import Message from "../Message";
 import "../styles/Chat.css";
 import StarBorderOutlinedIcon from "@material-ui/icons/StarBorderOutlined";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
-const Presentation = () => {
-  const { roomId } = useParams();
+const Presentation = (props) => {
+  const { roomId, roomDetails, roomMessages } = props;
   return (
     <div className="chat">
-      <h2>you are in the {roomId} room</h2>
       <div className="chat__header">
         <div className="chat__headerLeft">
           <h4 className="chat__channelName">
-            <strong>#general</strong>
+            <strong>#{roomDetails?.name}</strong>
             <StarBorderOutlinedIcon />
           </h4>
         </div>
@@ -21,6 +20,17 @@ const Presentation = () => {
             Details
           </p>
         </div>
+      </div>
+      <div className="chat__messages">
+        {roomMessages.map(({ message, timestamp, user, userImage }) => (
+          <Message
+            message={message}
+            timestamp={timestamp}
+            user={user}
+            userImage={userImage}
+          />
+        ))}
+        <Message />
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { db } from "../../../../config/firebaseConfig";
 import { useHistory } from "react-router-dom";
 import "../../components/styles/SidebarOption.css";
 const Presentation = (props) => {
@@ -6,12 +7,19 @@ const Presentation = (props) => {
   const history = useHistory();
   const selectChannel = () => {
     if (id) {
-      history.push(`/room/$id`);
+      history.push(`/room/${id}`);
     } else {
       history.push(title);
     }
   };
-  const addChannel = () => {};
+  const addChannel = () => {
+    const channelname = prompt("please enter the channel name");
+    if (channelname) {
+      db.collection("ROOMS").add({
+        name: channelname,
+      });
+    }
+  };
   return (
     <div
       className="sidebarOption"
