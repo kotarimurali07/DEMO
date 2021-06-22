@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Presentation from "./Presentation";
 import { db } from "../../../../config/firebaseConfig";
+import { useStateValue } from "../../../../Utility/StateProvider";
 const Container = () => {
+  const [{ user }] = useStateValue();
   const [channels, setChannels] = useState([]);
   useEffect(() => {
     db.collection("ROOMS").onSnapshot((snapshot) =>
@@ -16,7 +18,7 @@ const Container = () => {
   console.log(channels);
   return (
     <div>
-      <Presentation channels={channels} />
+      <Presentation channels={channels} user={user} />
     </div>
   );
 };

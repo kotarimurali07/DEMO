@@ -14,14 +14,14 @@ import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import AddIcon from "@material-ui/icons/Add";
 const Presentation = (props) => {
-  const { channels } = props;
+  const { channels, user } = props;
   return (
     <div className="sidebar">
       <div className="sidebar__header">
         <div className="sidebar__info">
           <h2>murali🚀</h2>
           <h3>
-            <FiberManualRecordIcon /> Seshu
+            <FiberManualRecordIcon /> {user?.displayName}
           </h3>
         </div>
         <CreateIcon />
