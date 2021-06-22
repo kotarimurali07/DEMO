@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Google from "./services/Authentication/components/Google";
 import { useStateValue } from "./Utility/StateProvider";
 const App = () => {
-  const [{ user }, dispatch] = useStateValue;
+  const [{ user }, dispatch] = useStateValue();
   return (
     <div className="App">
       <Router>
@@ -16,7 +16,7 @@ const App = () => {
         ) : (
           <>
             <Header />
-            <div className="app__body">
+            <div className="app_body">
               <Sidebar />
               <Switch>
                 <Route path="/room/:roomId">
